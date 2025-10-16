@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('comptes', function (Blueprint $table) {
             $table->id();
             $table->string('rib')->unique();
-            $table->unsignedBigInteger('user_id');
+            $table->boolean('is_actif');
+            $table->integer('user_id');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

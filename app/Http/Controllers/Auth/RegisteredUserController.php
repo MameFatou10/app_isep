@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Compte;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -40,6 +41,18 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
+
+        $rib = 'SN';
+        for ($i=0; $i < 11; $i++) { 
+            $rib .= random_int(0,9);
+        }
+
+        $compte = new Compte();
+        $compte->user_id = $user->id;
+        $compte->rib = $rib;
+        $compte->is_actif = false;
+
+        $compte->save();
 
         event(new Registered($user));
 

@@ -110,7 +110,6 @@ class ContactController extends Controller
     }
 
 
-
     public function lister() {
         return "je suis une route nomé";
     }

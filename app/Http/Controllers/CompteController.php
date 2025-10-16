@@ -19,7 +19,8 @@ class CompteController extends Controller
      */
     public function create()
     {
-        
+        $users = User::all();
+        return view('comptes.create', compact('users'));
     }
 
     /**
@@ -27,13 +28,8 @@ class CompteController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'user_id' => ['required','unique:'.User::class],
-            'rib' => ['required', 'string','unique','max:14'],
-            'is_actif' => ['required', 'boolean'],
-        ]);
+    
 
-        
     }
 
     /**
