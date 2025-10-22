@@ -32,7 +32,6 @@ Route::post('/comptes/{id}', [CustomController::class, 'activer_desactiver_compt
 require __DIR__.'/auth.php';
 
 Route::middleware(IsAdmin::class)->group(function () {
-
     Route::resource('transferts', TransfertController::class);
 });
 

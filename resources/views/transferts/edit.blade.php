@@ -9,8 +9,12 @@
         @method('PUT')
 
         <div class="mb-3">
-            <label class="form-label">Type :</label>
-            <input type="text" name="type" class="form-control" value="{{ old('type', $transfert->type) }}" required>
+
+            <label>Type :</label>
+            <select name="type" id="type" required >
+                <option value="{{ old('type', $transfert->type) }}">depot</option>
+                <option value="{{ old('type', $transfert->type) }}">transfert</option>
+            </select>
         </div>
 
         <div class="mb-3">

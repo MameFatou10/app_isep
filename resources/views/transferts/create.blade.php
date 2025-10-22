@@ -7,7 +7,10 @@
     @csrf
 
     <label>Type :</label>
-    <input type="text" name="type" required>
+    <select name="type" id="type" required>
+        <option value="">depot</option>
+        <option value="">transfert</option>
+    </select>
 
     <label>Montant :</label>
     <input type="number" step="0.01" name="montant" required>
