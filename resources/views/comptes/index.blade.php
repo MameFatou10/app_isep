@@ -26,7 +26,7 @@
                         <th scope="col">ID</th>
                         <th scope="col">Rib</th>
                         <th scope="col">Status compte</th>
-                        <!-- <th scope="col">Nom</th> -->
+                        <th scope="col">Nom</th>
                         <th scope="col" class="">Action</th>
                     </tr>
                 </thead>
@@ -43,6 +43,7 @@
                             <span class="px-2 bg-danger text-white"> Dèsactivé</span>
                             @endif
                         </td>
+                        <td>{{$compte->user->name}}</td>
                         <td>
                             <form method="POST" action="/comptes/{{ $compte->id }}">
                                 @csrf

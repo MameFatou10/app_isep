@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Contact extends Model
 {
-    
+
 
     protected $fillable = [
         'prenom',
@@ -19,5 +19,9 @@ class Contact extends Model
 
     public function user() {
         return $this->belongsTo(User::class);
+    }
+
+    public function transfert() {
+        return $this->hasMany(Transfert::class,'contact_id');
     }
 }

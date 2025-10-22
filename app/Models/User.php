@@ -50,7 +50,7 @@ class User extends Authenticatable
         return $this->hasMany(Contact::class , 'user_id');
     }
 
-        public function compte() {
-        return $this->hasOne(Compte::class , 'user_id');
+    public function compte() {
+       return $this->hasOne(Compte::class , 'user_id');
     }
 }

@@ -6,7 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Transfert extends Model
 {
-   use HasFactory;
 
-    protected $fillable = ['montant', 'rib_source', 'rib_destination'];
+    protected $fillable = [
+        'type', 'montant','contact_id'
+    ];
+
+    public function contact()
+    {
+        return $this->belongsTo(Contact::class);
+    }
 }
